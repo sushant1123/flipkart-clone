@@ -1,5 +1,5 @@
 node_modules
 .env
 package-lock.json
-flipkart-clone/node_modules
-flipkart-clone/package-lock.json
+client/node_modules
+client/package-lock.json

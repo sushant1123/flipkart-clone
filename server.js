@@ -11,6 +11,8 @@ import { v4 as uuid } from "uuid";
 
 const app = express();
 
+const port = process.env.PORT || 8000;
+
 //to initialize .env file
 dotenv.config();
 
@@ -19,7 +21,7 @@ const PASSWORD = process.env.DB_PASSWORD;
 
 const URL = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.hxqnm.mongodb.net/`;
 
-connection(process.env.URI || URL);
+connection(process.env.MONGODB_URI || URL);
 
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static("client/build"));
@@ -32,7 +34,6 @@ app.use(cors());
 //routes
 app.use("/", Routes);
 
-const port = process.env.PORT || 8000;
 app.listen(port, () => {
 	console.log("Server is listening on port " + port);
 });
