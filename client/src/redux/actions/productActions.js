@@ -3,10 +3,10 @@ import * as action from "../constants/productConstant";
 
 //we connect to our backend port here
 
-const URL = ""; //changed while pushing to heroku
+//const URL = ""; //changed while pushing to heroku
 export const getProducts = () => async (dispatch) => {
 	try {
-		const { data } = await axios.get(`${URL}/products`);
+		const { data } = await axios.get(`/products`);
 
 		dispatch({ type: action.GET_PRODUCTS_SUCCESS, payload: data });
 
@@ -19,7 +19,7 @@ export const getProducts = () => async (dispatch) => {
 
 export const getProductDetails = (id) => async (dispatch) => {
 	try {
-		const { data } = await axios.get(`${URL}/product/${id}`);
+		const { data } = await axios.get(`/product/${id}`);
 		dispatch({ type: action.GET_PRODUCT_DETAILS_SUCCESS, payload: data });
 	} catch (error) {
 		dispatch({

@@ -9,32 +9,44 @@ import { useEffect } from "react";
 import { getProducts as listProducts } from "../../redux/actions/productActions.js";
 
 const Home = () => {
-  const { products } = useSelector((state) => state.getProducts);
-  const dispatch = useDispatch();
+	const { products } = useSelector((state) => state.getProducts);
+	const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(listProducts());
-  }, [dispatch]);
+	useEffect(() => {
+		dispatch(listProducts());
+	}, [dispatch]);
 
-  return (
-    <div>
-      <Navbar />
-      <Banner />
-      <MidSlide products={products} />
+	return (
+		<div>
+			<Navbar />
+			<Banner />
+			<MidSlide products={products} />
 
-      <MidSection />
+			<MidSection />
 
-      <Slide timer={false} title="Suggestions for you!" products={products} />
-      <Slide timer={false} title="Deal of the Tomorrow!" products={products} />
-      <Slide
-        timer={false}
-        title="Special Deal of the Day!"
-        products={products}
-      />
-      <Slide timer={false} title="Deal of the Month!" products={products} />
-      <Slide timer={false} title="Holiday deals!" products={products} />
-    </div>
-  );
+			<Slide
+				timer={false}
+				title="Suggestions for you!"
+				products={products}
+			/>
+			<Slide
+				timer={false}
+				title="Deal of the Tomorrow!"
+				products={products}
+			/>
+			<Slide
+				timer={false}
+				title="Special Deal of the Day!"
+				products={products}
+			/>
+			<Slide
+				timer={false}
+				title="Deal of the Month!"
+				products={products}
+			/>
+			<Slide timer={false} title="Holiday deals!" products={products} />
+		</div>
+	);
 };
 
 export default Home;

@@ -1,12 +1,12 @@
 import axios from "axios";
 import * as action from "../constants/cartConstant";
 
-const URL = "";
+//const URL = "";
 
 export const addToCart = (id) => async (dispatch) => {
 	//redux thunk call to call a middleware
 	try {
-		const { data } = await axios.get(`${URL}/product/${id}`);
+		const { data } = await axios.get(`/product/${id}`);
 		dispatch({ type: action.ADD_TO_CART, payload: data });
 	} catch (error) {
 		//dispatch({ type: action.GET_PRODUCT_DETAILS_FAIL, payload: error.message });
