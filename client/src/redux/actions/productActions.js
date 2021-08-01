@@ -6,7 +6,7 @@ import * as action from "../constants/productConstant";
 //const URL = ""; //changed while pushing to heroku
 export const getProducts = () => async (dispatch) => {
 	try {
-		const { data } = await axios.get(`/products`);
+		const { data } = await axios.get("/products");
 
 		dispatch({ type: action.GET_PRODUCTS_SUCCESS, payload: data });
 

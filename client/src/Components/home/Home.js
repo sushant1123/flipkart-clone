@@ -6,7 +6,7 @@ import MidSlide from "./MidSlide";
 
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { getProducts as listProducts } from "../../redux/actions/productActions.js";
+import { getProducts as listProducts } from "../../redux/actions/productActions";
 
 const Home = () => {
 	const { products } = useSelector((state) => state.getProducts);
