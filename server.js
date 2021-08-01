@@ -9,8 +9,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { v4 as uuid } from "uuid";
 
-/* import mongoose from "mongoose"; */
-
 const app = express();
 
 //to initialize .env file
@@ -24,7 +22,7 @@ const URL = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.hxqnm.mongodb.net/`;
 connection(process.env.URI || URL);
 
 if (process.env.NODE_ENV === "production") {
-	app.use(express.static("flipkart-clone/build"));
+	app.use(express.static("client/build"));
 }
 
 app.use(express.urlencoded({ extended: true }));
