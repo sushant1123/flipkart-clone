@@ -9,7 +9,7 @@
 		"start": "node server.js",
 		"client-install": "cd client && npm install",
 		"client-build": "cd client && npm run build",
-		"heroku-postbuild": "npm run client-install && client-build"
+		"heroku-postbuild": "npm run client-install && npm run client-build"
 	},
 	"author": "",
 	"license": "ISC",
@@ -23,5 +23,9 @@
 		"mongoose": "^5.13.3",
 		"nodemon": "^2.0.12",
 		"uuid": "^8.3.2"
+	},
+	"engines": {
+		"node": "16.x",
+		"npm": "7.x"
 	}
 }
